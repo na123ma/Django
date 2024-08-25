@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% block content %}
+<h2>Course Entry Form</h2>
+<marquee>Please enter the course details</marquee>
+<form method="post" action="{% url 'process_course_entry' %}">
+{% csrf_token %}
+<table border=1>
+<tr><td><label for="Course">Course:<label></td>
+<td><input type="text"name="course" required></td><tr>
+<tr><td><label for="CourseId">CourseId:<label></td>
+<td><input type="text"name="courseId" required></td><tr>
+<tr><td colspan="2"align="center"><button type="submit">Submit</button></td></tr>
+</table>
+</form>
+<form action="{% url 'display_image' %}">
+<table border=2>
+<tr>
+<td><button type="submit">Home</button></td></tr>
+</table>
+</form>
+{% endblock %}

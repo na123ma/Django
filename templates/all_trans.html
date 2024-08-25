@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><body bgcolor=lavender><h1>Students</h1>
+<table border=1>
+<tr><th>Course</th><th>BatchNo</th><th>Sem</th><th>ExamType</th><th>StudRegNo</th><th>StudentName</th><th>PaperCode</th><th>Marks</th></tr>
+{% for x in data %}
+<tr>
+<td>{{x.course_id}}</td>
+<td>{{x.batchNo_id}}</td>
+<td>{{x.sem_id}}</td>
+<td>{{x.examType_id}}</td>
+<td>{{x.studRegNo_id}}</td>
+<td>{{x.nameOfTheStudent}}</td>
+<td>{{x.paperCode_id}}</td>
+<td>{{x.marks}}</td>
+</tr>
+{% endfor %}
+</table>
+</body></html>

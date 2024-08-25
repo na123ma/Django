@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+{% block content %}
+<table border=1>
+<tr><th>ExamId</th><th>ExamType</th><th>Delete</th></tr>
+{% for x in data %}
+<tr>
+<td>{{x.examId}}</td>
+<td>{{x.examType}}</td>
+<td><a href="{% url 'delete3' pk=x.id %}"><button type="button" style="margin-left:5px;">delete</button></a></td>
+</tr>
+{% endfor %}
+</table>
+<form action="{% url 'display_image' %}">
+<table border=2>
+<tr>
+<td><button type="submit">Home</button></td></tr>
+</table>
+</form>
+{% endblock %}
+

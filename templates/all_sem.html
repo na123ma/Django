@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+{% block content %}
+<table border=1>
+<tr><th>Sem</th><th>SemId</th></tr>
+{% for x in data %}
+<tr>
+<td>{{x.sem}}</td>
+<td>{{x.semId}}</td>
+</tr>
+{% endfor %}
+</table>
+<form action="{% url 'display_image' %}">
+<table border=2>
+<tr>
+<td><button type="submit">Home</button></td></tr>
+</table>
+</form>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en">
+<head> <meta charset="UTF-8"> <title>Student Paper Entry</title></head>
+<body bgcolor=lavender> <h2>Paper Entry Form</h2>
+<marquee>Please enter the student details</marquee>
+<form method="post" action="{% url 'process_batch_entry' %}">
+{% csrf_token %}
+<table border=1>
+<tr><td><label for="PaperCode">PaperCode:<label></td>
+<td><input type="text"name="paperCode" required></td><tr>
+<tr><td><label for="PaperType">PaperType:<label></td>
+<td><input type="text"name="papertype" required></td><tr>
+<tr><td><label for="PaperShtName">PaperShtName:<label></td>
+<td><input type="text"name="paperShtName" required></td><tr>
+<tr><td><label for="PaperName">PaperName:<label></td>
+<td><input type="text"name="paperName" required></td><tr>
+
+<tr><td colspan="2"align="center"><button type="submit">Submit</button></td></tr>
+</table>
+</form>
+<form action="{% url 'display_image' %}">
+<table border=2>
+<tr>
+<td><button type="submit">Home</button></td></tr>
+</table>
+</body>
+</html>

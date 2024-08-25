@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+{% block content %}
+<style>
+    h2,p{
+        text-align: center;
+        font-size: xx-large;
+    }
+    .btn{
+       margin-left: 590px;
+    }
+   .one{
+    text-shadow: 2px 0px red;
+   }
+   .btn2{
+    margin-left: 650px;
+    margin-top: -30px;
+   }
+</style>
+<h2 class="one"><u>ExamMaster Details</u></h2>
+<table border="1" class="btn">
+<tr><th> examId: </th>
+    <th>{{exam.examId}}</th></tr>
+<tr><th>ExamType: </th>
+    <th>{{exam.examType}}</th></tr>
+</table><br>
+<table border="1" class="btn">
+<tr><th><a href="{% url 'edit_exam' exam.id  %}"><button type="button">Edit</button></a></th></tr>
+</table>
+<table border="1" class="btn2">
+<tr><th><a href="{% url 'display_Paper' %}"><button type="button">View</button></a></th></tr>
+</table>
+{% endblock %}

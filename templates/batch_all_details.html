@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+{% block content %}
+<style>
+    table{
+        margin-left: 550px;
+        margin-top: 10px;
+        font-size: xx-large;
+    }
+h2{
+    text-align: center;
+}
+</style>
+<h2>Welcome To All BatchMaster Data</h2>
+<table border=1>
+{% for i in data %}
+<tr>
+<td>{{i.batchNo}}</td>
+<td>{{i.batchId}}</td>
+<td>
+<a href="{% url 'edit_batch' i.id %}"><button type="button">Edit</button></a>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

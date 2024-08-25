@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+{% block content %}
+<h2>Exam Entry Form</h2>
+<marquee>Please enter the exam details</marquee>
+<form method="post" action="{% url 'process_exam_entry' %}">
+{% csrf_token %}
+<table border=1>
+<tr><td><label for="ExamId">ExamId:<label></td>
+<td><input type="text"name="examId" required></td><tr>
+<tr><td><label for="ExamType">ExamType:<label></td>
+<td><input type="text"name="examType" required></td><tr>
+<tr><td colspan="2"align="center"><button type="submit">Submit</button></td></tr>
+</table>
+</form>
+<form action="{% url 'display_image' %}">
+<table border=2>
+<tr>
+<td><button type="submit">Home</button></td></tr>
+</table>
+{% endblock %}

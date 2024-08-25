@@ -1,0 +1,37 @@
+{% extends "master.html" %}
+{% block content %}
+<style>
+.arrange{
+   text-align:center;
+   margin-top:100px;
+}
+h2{
+   text-align:center;
+   color:orange;
+}
+</style>
+   
+    <form method="get" class="arrange">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    
+    {% if results %}
+        <h2>Paper MasterResults are:</h2>
+        <ul>
+            {% for item in results %}
+                <li>{{ item.paperCode }}</li> <br> 
+	        <li>{{ item.papertype }}</li> <br>
+                <li>{{ item.paperShtName }}</li> <br>
+                <li>{{ item.paperName }}</li> 
+            {% endfor %}
+        </ul>
+    {% endif %}
+<form action="{% url 'display_image' %}">
+<table border=2>
+<tr>
+<td><button type="submit">Home</button></td></tr>
+</table>
+</form>
+{% endblock %}
+

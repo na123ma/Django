@@ -1,0 +1,13 @@
+<html>
+<body bgcolor=lavender>
+<p> Data Inserted Successfully</p>
+<form action="{% url 'display_image' %}" method="post">
+{% csrf_token %}
+<!--<td> <a href="{% url 'display_image' %}">
+<button type="submit">Submit</button></a></td>-->
+<button type="submit">Home</button>
+</form>
+</body>
+</html>
+
+

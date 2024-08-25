@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+{% block content %}
+<style>
+    table{
+        margin-left: 550px;
+        margin-top: 10px;
+        font-size: xx-large;
+    }
+h2{
+    text-align: center;
+}
+</style>
+<h2>Welcome To All Papermaster Data</h2>
+<table border=1>
+{% for i in data %}
+<tr>
+<td>{{i.paperCode}}</td>
+<td>{{i.papertype}}</td>
+<td>{{i.paperShtName}}</td>
+<td>{{i.paperName}}</td>
+<td>
+<a href="{% url 'edit_paper' i.id %}"><button type="button">Edit</button></a>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+{% block content %}
+<style>
+table{
+   margin-left:500px;
+   margin-top:100px;
+   color:white;
+}
+</style>
+<h1>
+<table border=1>
+<tr><th>id</th><th>Batchno</th><th>Batchid</th><th>Delete</th></tr>
+  {% for x in data %}
+    <tr>
+       <td>{{x.id}}</td>
+       <td>{{x.batchNo}}</td>
+       <td>{{x.batchId}}</td>
+       <td><a href="{% url 'delete' pk=x.id %}"><button type="button" style="margin-left:5px;" onclick="alert('Are you Sure')">delete</button></a></td>
+    </tr>
+  {% endfor %}
+</table>
+<form action="{% url 'display_image' %}">
+<table border=2>
+<tr>
+<td><button type="submit">Home</button></td></tr>
+</table>
+</form>
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+{% block content %}
+<form action="{% url 'process_student_entry' %}" method="post">
+{% csrf_token %}
+{{form}}
+<input type="submit" value="Submit">
+</form>
+<form action="{% url 'display_image' %}">
+<table border=2>
+<tr>
+<td><button type="submit">Home</button></td></tr>
+</table>
+{% endblock %}
+
+

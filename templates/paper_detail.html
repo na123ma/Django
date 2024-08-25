@@ -1,0 +1,37 @@
+
+{% extends "master.html" %}
+{% block content %}
+<style>
+    h2,p{
+        text-align: center;
+        font-size: xx-large;
+    }
+    .btn{
+       margin-left: 590px;
+    }
+   .one{
+    text-shadow: 2px 0px red;
+   }
+   .btn2{
+    margin-left: 650px;
+    margin-top: -30px;
+   }
+</style>
+<h2 class="one"><u>PaperMaster Details</u></h2>
+<table border="1" class="btn">
+<tr><th> PaperCode: </th>
+    <th>{{paper.paperCode}}</th></tr>
+<tr><th>PaperType: </th>
+    <th>{{paper.papertype}}</th></tr>
+<tr><th>PaperShtName: </th>
+        <th>{{paper.paperShtName}}</th></tr>
+<tr><th>PaperName: </th>
+        <th>{{paper.paperName}}</th></tr>
+</table><br>
+<table border="1" class="btn">
+<tr><th><a href="{% url 'edit_paper' paper.id  %}"><button type="button">Edit</button></a></th></tr>
+</table>
+<table border="1" class="btn2">
+<tr><th><a href="{% url 'display_Paper' %}"><button type="button">View</button></a></th></tr>
+</table>
+{% endblock %}

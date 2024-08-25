@@ -1,0 +1,46 @@
+{% extends "master.html" %}
+{% block content %}
+<style>
+table{
+   margin-left:500px;
+   margin-top:100px;
+   color:orange;
+}
+.print-button1{
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 480px;
+            margin-top: 50px;
+        }
+.print-button{
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 50px;
+            margin-top: 50px;
+}
+</style>
+<table border=1>
+<tr><th>Batchno</th><th>Batchid</th></tr>
+  {% for x in data %}
+    <tr>
+       <td>{{x.batchNo}}</td>
+       <td>{{x.batchId}}</td>
+    </tr>
+  {% endfor %}
+</table>
+<form action="{% url 'display_image' %}">
+
+<button type="submit" class="print-button1">Home</button>
+</form>
+{% endblock %}
+
